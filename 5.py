@@ -1,6 +1,6 @@
 moves = input()
-x=0
-y=0
+x = 0
+y = 0
 for m in moves:
   if m == 'L':
    x = x - 1
@@ -14,4 +14,3 @@ if (x == 0) and (y == 0):
  print ("True")
 else:
  print ("False")
-
