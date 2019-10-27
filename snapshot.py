@@ -5,7 +5,6 @@ from datetime import datetime
 from config import settings
 time_stmp = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
 class snapshot:
-
     def monitor(self):
         print("SNAPSHOT:")
         print("CPU load             -", psutil.cpu_percent(interval=1), "%")
@@ -16,11 +15,10 @@ class snapshot:
     def print(self):
         outpfile = settings['output']
         tinterval = settings['interval']
-        tlength=settings['time']
-
+        tlength = settings['time']
         i = 0
         if outpfile == "json":
-            data={}
+            data = {}
             for i in range(tlength):
                 time_stmp = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
                 data['SNAPSHOT' + str(i)] = []
@@ -40,19 +38,14 @@ class snapshot:
                 print(i)
                 time_stmp = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
                 with open('data2.txt', 'a+') as file:
-                    file.write("'SNAPSHOT" + ":" + str(i+1) + ": " + str(time_stmp) + ': '+'\n')
-                    file.write("CPU load             -" + str(psutil.cpu_percent(interval=1))+'\n')
-                    file.write("Physical memory used -" + str(psutil.disk_usage('/'))+'\n')
-                    file.write("Virtual memory used  -" + str(psutil.virtual_memory()[2])+'\n')
-                    file.write("IO information       -" + str(psutil.net_io_counters())+'\n')
-                    file.write("Network information  -" + str(psutil.net_io_counters(pernic=True))+'\n')
+                    file.write("'SNAPSHOT" + ":" + str(i+1) + ": " + str(time_stmp) + ': ' + '\n')
+                    file.write("CPU load             -" + str(psutil.cpu_percent(interval=1)) + '\n')
+                    file.write("Physical memory used -" + str(psutil.disk_usage('/')) + '\n')
+                    file.write("Virtual memory used  -" + str(psutil.virtual_memory()[2]) + '\n')
+                    file.write("IO information       -" + str(psutil.net_io_counters()) + '\n')
+                    file.write("Network information  -" + str(psutil.net_io_counters(pernic=True)) + '\n')
                 time.sleep(tinterval)
         else:
             print("write txt or json in conf file ")
-
-
-
 snp = snapshot()
 snp.print()
-#snp.monitor()
-

@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="monitor",
+    name="snapshot",
     packages=setuptools.find_packages(),
     version="1.0",
     author="Vitali Markau",
