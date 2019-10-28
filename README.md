@@ -4,4 +4,4 @@ DevOps Lab 2019 (September-December)
 - User
 - name of repo
 - and you can choose one paramter of the Pull requset that you want to see
-Also you can see some additional information in the help 
+- Also you can see some additional information in the help 
