@@ -13,7 +13,7 @@ parser.add_argument('--version', action='version', version='version 1.0')
 args = parser.parse_args()
 
 b = requests.get(
-    'https://api.github.com/repos/' + args.user[0] +'/' + args.repo[0] + '/pulls/' + args.num[0],
+    'https://api.github.com/repos/' + args.user[0] + '/' + args.repo[0] + '/pulls/' + args.num[0],
     auth=('vitaly-markov', token))
 dd = b.json()
 if args.param[0]:
