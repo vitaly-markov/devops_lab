@@ -32,4 +32,3 @@ with open('pyinfo.json', 'w') as json_file:
 
 with open('pyinfo.yml', 'w') as outfile:
     yaml.dump(python_info, outfile, default_flow_style=False)
-    
